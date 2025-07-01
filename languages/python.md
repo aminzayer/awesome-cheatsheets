@@ -1,382 +1,513 @@
 # Python
 
-* Python is an interpreted, high-level and general-purpose, dynamically typed programming language
+* Python is an interpreted, high-level, general-purpose, and dynamically typed programming language.
+* It is also Object-oriented, supports modules and packages, and can be used as a scripting language.
+* In Python, everything is an Object.
+* Python files have an extension of `.py`.
+* Python uses indentation to define code blocks instead of curly braces (`{}`).
+* To run a Python file, use the following command in your terminal (Command Prompt on Windows, or shell on macOS/Linux):
 
-* It is also Object oriented, modular oriented and a scripting language.
+    `$ python filename.py` or `$ python3 filename.py`
 
-* In Python, everything is considered as an Object.
+#### Python typically doesn't require explicit import statements for built-in functionalities.
 
-* A python file has an extension of .py
+## Creating and Executing a Program
 
-* Python follows Indentation to separate code blocks instead of flower brackets({}).
-
-* We can run a python file by the following command in cmd(Windows) or shell(mac/linux).
-
-    `$ python <filename.py>` or `$ python3 <filename.py>`
-
-#### By default, python doesn't require any imports to run a python file.
-
-## Create and execute a program
-
-1. Open up a terminal/cmd
-1. Create the program: nano/cat > nameProgram.py
-1. Write the program and save it
-1. python nameProgram.py
+1.  Open a terminal or command prompt.
+2.  Create a Python file (e.g., `my_program.py`) using a text editor:
+    *   On Linux/macOS: `nano my_program.py` or `vim my_program.py`
+    *   You can also use any graphical text editor.
+3.  Write your Python code in the file and save it.
+4.  Execute the program from the terminal: `python my_program.py`
 
 <br>
 
 ### Basic Datatypes
 
-| Data Type | Description |
-| --------- | ----------- |
-| int | Integer values [0, 1, -2, 3] |
-| float | Floating point values [0.1, 4.532, -5.092] |
-| char | Characters [a, b, @, !, `] |
-| str | Strings [abc, AbC, A@B, sd!, `asa] |
-| bool | Boolean Values [True, False] |
-| complex | Complex numbers [2+3j, 4-1j] |
+| Data Type | Description                                       | Example                       |
+| :-------- | :------------------------------------------------ | :---------------------------- |
+| `int`     | Integer values (whole numbers)                    | `0`, `1`, `-2`, `1000`        |
+| `float`   | Floating-point values (numbers with decimals)     | `0.1`, `3.14`, `-2.5e-3`      |
+| `str`     | Strings (sequences of characters)                 | `"hello"`, `'Python'`, `"""multi-line"""` |
+| `bool`    | Boolean values (representing truth or falsehood)  | `True`, `False`               |
+| `complex` | Complex numbers (numbers with a real and imaginary part) | `2+3j`, `1-4j`                |
+| `NoneType`| Represents the absence of a value                 | `None`                        |
+
+**Note:** Python does not have a separate `char` type. Single characters are represented as strings of length 1.
 
 <br>
 
 ## Keywords
-<br>
 
-- As of python3.8 there are 35 keywords
+Keywords are reserved words in Python that have special meanings and cannot be used as variable names, function names, or any other identifiers. As of Python 3.10, there are 35 keywords.
 
-| Keyword | Description  | Category |
-|---------- | ---------- | --------- | 
-| True      | Boolean value for not False or 1 | Value Keyword|
-| False     | Boolean Value for not True or 0 | Value Keyword |
-| None      | No Value | Value keyword |
-| and       | returns true if both (oprand) are true (other language && ) | Operator keyword |
-| or        | returns true of either operands is true (other language || ) | Operator keyword |
-| in        | returns true if word is in iterator | Operator keyword |
-| is        | returns true if id of variables are same | Operator keyword |
-| not       | returns opposite Boolean value | Operator Keyword |
-| if | get into block if expression is true | conditional |
-| elif | for more than 1 if checks | conditional |
-| else | this block will be executed if condition is false | conditional |
-| for | used for looping | iteration |
-| while | used for looping | iteration |
-| break | get out of loop | iteration | 
-| continue | skip for specific condition | iteration |
-| def | make user defined function | structure |
-| class | make user defined classes | structure |
-| lambda | make anonymous function | structure |
-| with | execute code within context manager's scope | structure |
-| as | alias for something | structure |
-| pass | used for making empty structures(declaration) | structure |
-| return | get value(s) from function, get out of function | returning keyword |
-| yield | yields values instead of returning (are called generators) | returning keyword |
-| import | import libraries/modules/packages | import |
-| from | import specific function/classes from modules/packages | import |
-| try | this block will be tried to get executed | exception handling |
-| except | is any exception/error has occured it'll be executed | exception handling |
-| finally | It'll be executed no matter exception occurs or not | exception handling | 
-| raise | throws any specific error/exception | exception handling |
-| assert | throws an AssertionError if condition is false | exception handling |
-| async | used to define asynchronous functions/co-routines | asynchronous programming |
-| await | used to specify a point when control is taken back | asynchronous programming |
-| del | deletes/unsets any user defined data |  variable handling |
-| global | used to access variables defined outside of function | variable handling |
-| nonlocal | modify variables from different scopes | variable handling |
+| Keyword    | Description                                                    | Category                |
+| :--------- | :------------------------------------------------------------- | :---------------------- |
+| `True`     | Boolean value representing truth.                              | Value Keyword           |
+| `False`    | Boolean value representing falsehood.                            | Value Keyword           |
+| `None`     | Represents no value or a null value.                           | Value Keyword           |
+| `and`      | Logical AND: returns `True` if both operands are true.         | Operator Keyword        |
+| `or`       | Logical OR: returns `True` if either operand is true.          | Operator Keyword        |
+| `not`      | Logical NOT: returns the opposite Boolean value.               | Operator Keyword        |
+| `in`       | Membership test: returns `True` if a value is present in a sequence. | Operator Keyword        |
+| `is`       | Identity test: returns `True` if two variables point to the same object. | Operator Keyword        |
+| `if`       | Starts a conditional statement.                                | Conditional             |
+| `elif`     | Else if: part of a conditional statement for multiple checks.  | Conditional             |
+| `else`     | Part of a conditional statement; executes if the condition is false. | Conditional             |
+| `for`      | Used for iterating over a sequence (e.g., list, tuple, string). | Iteration               |
+| `while`    | Used for creating a loop that continues as long as a condition is true. | Iteration               |
+| `break`    | Exits the current loop prematurely.                            | Iteration Control       |
+| `continue` | Skips the rest of the code inside a loop for the current iteration and proceeds to the next. | Iteration Control       |
+| `def`      | Defines a user-defined function.                               | Structure / Definition  |
+| `class`    | Defines a user-defined class.                                  | Structure / Definition  |
+| `lambda`   | Creates an anonymous (unnamed) function.                       | Structure / Definition  |
+| `with`     | Used for resource management (e.g., file handling) to ensure resources are properly released. | Structure / Context     |
+| `as`       | Used to create an alias, often with `import` or `with`.        | Structure / Alias       |
+| `pass`     | A null operation; does nothing. Used as a placeholder.         | Structure               |
+| `return`   | Exits a function and optionally returns a value.               | Returning Keyword       |
+| `yield`    | Pauses a generator function and returns a value, preserving its state for the next call. | Returning Keyword       |
+| `import`   | Imports modules or specific names from modules.                | Import                  |
+| `from`     | Used with `import` to import specific parts of a module.       | Import                  |
+| `try`      | Starts a block of code that might raise an exception.          | Exception Handling      |
+| `except`   | Catches and handles exceptions raised in the `try` block.      | Exception Handling      |
+| `finally`  | Defines a block of code that will be executed regardless of whether an exception occurred. | Exception Handling      |
+| `raise`    | Manually raises an exception.                                  | Exception Handling      |
+| `assert`   | Used for debugging; raises an `AssertionError` if a condition is false. | Exception Handling      |
+| `async`    | Defines an asynchronous function (coroutine).                  | Asynchronous Programming |
+| `await`    | Pauses execution of an `async` function until an awaitable object (e.g., another coroutine) completes. | Asynchronous Programming |
+| `del`      | Deletes an object or a part of an object (e.g., an item from a list, a variable). | Variable Handling       |
+| `global`   | Declares that a variable inside a function is global (defined outside the function). | Variable Handling       |
+| `nonlocal` | Declares that a variable inside a nested function refers to a variable in an enclosing (non-global) scope. | Variable Handling       |
+
 <br>
 
 ## Operators
 
+| Operator Category      | Operator | Description                                                                 | Example                 |
+| :--------------------- | :------- | :-------------------------------------------------------------------------- | :---------------------- |
+| **Arithmetic**       | `+`      | Addition                                                                    | `x + y`                 |
+|                        | `-`      | Subtraction                                                                 | `x - y`                 |
+|                        | `*`      | Multiplication                                                              | `x * y`                 |
+|                        | `/`      | Division (results in a float)                                               | `x / y`                 |
+|                        | `//`     | Floor Division (discards the fractional part)                               | `x // y`                |
+|                        | `%`      | Modulus (remainder of the division)                                         | `x % y`                 |
+|                        | `**`     | Exponentiation (x raised to the power of y)                                 | `x ** y`                |
+| **Comparison**       | `==`     | Equal to                                                                    | `x == y`                |
+|                        | `!=`     | Not equal to                                                                | `x != y`                |
+|                        | `>`      | Greater than                                                                | `x > y`                 |
+|                        | `<`      | Less than                                                                   | `x < y`                 |
+|                        | `>=`     | Greater than or equal to                                                    | `x >= y`                |
+|                        | `<=`     | Less than or equal to                                                       | `x <= y`                |
+| **Logical**          | `and`    | Logical AND: `True` if both operands are true                               | `x > 5 and y < 10`      |
+|                        | `or`     | Logical OR: `True` if at least one operand is true                          | `x > 5 or y < 10`       |
+|                        | `not`    | Logical NOT: `True` if the operand is false, `False` if the operand is true | `not (x == y)`          |
+| **Bitwise**          | `&`      | Bitwise AND                                                                 | `x & y`                 |
+|                        | `\|`     | Bitwise OR                                                                  | `x \| y`                |
+|                        | `^`      | Bitwise XOR (Exclusive OR)                                                  | `x ^ y`                 |
+|                        | `~`      | Bitwise NOT (Inverts all bits)                                              | `~x`                    |
+|                        | `<<`     | Bitwise Left Shift                                                          | `x << 2`                |
+|                        | `>>`     | Bitwise Right Shift                                                         | `x >> 2`                |
+| **Assignment**       | `=`      | Assign value from right side to left side                                   | `x = 5`                 |
+|                        | `+=`     | Add AND: `x = x + y`                                                        | `x += y`                |
+|                        | `-=`     | Subtract AND: `x = x - y`                                                   | `x -= y`                |
+|                        | `*=`     | Multiply AND: `x = x * y`                                                   | `x *= y`                |
+|                        | `/=`     | Divide AND: `x = x / y`                                                     | `x /= y`                |
+|                        | `//=`    | Floor Divide AND: `x = x // y`                                              | `x //= y`               |
+|                        | `%=`     | Modulus AND: `x = x % y`                                                    | `x %= y`                |
+|                        | `**=`    | Exponent AND: `x = x ** y`                                                  | `x **= y`               |
+|                        | `&=`     | Bitwise AND assignment                                                      | `x &= y`                |
+|                        | `\|=`    | Bitwise OR assignment                                                       | `x \|= y`               |
+|                        | `^=`     | Bitwise XOR assignment                                                      | `x ^= y`                |
+|                        | `>>=`    | Bitwise Right Shift assignment                                              | `x >>= y`               |
+|                        | `<<=`    | Bitwise Left Shift assignment                                               | `x <<= y`               |
+| **Identity**         | `is`     | Returns `True` if both variables are the same object                          | `x is y`                |
+|                        | `is not` | Returns `True` if both variables are not the same object                    | `x is not y`            |
+| **Membership**       | `in`     | Returns `True` if a sequence with the specified value is present in the object | `'H' in 'Hello'`        |
+|                        | `not in` | Returns `True` if a sequence with the specified value is not present in the object | `'W' not in 'Hello'`    |
+| **Parentheses**      | `( )`    | Grouping expressions, function calls, tuple declaration                     | `(a + b) * c`           |
+| **List/Dict Access** | `[ ]`    | List indexing/slicing, dictionary key access, declaring lists             | `my_list[0]`, `my_dict['key']` |
+
 <br>
 
-| Operator | Description |
-|-|-|
-|  ( )	|  grouping parenthesis, function call, tuple declaration |
-|  [ ]	|  array indexing, also declaring lists etc.|
-|  !	|    relational not, complement, ! a  yields true or false |
-|  ~   | 	bitwise not, ones complement, ~a |
-| \-   |	unary minus, - a |
-|  \+   | 	unary plus,  + a |
-|  \*   |	multiply, a * b |
-|  /   	| divide, a / b |
-|  %    |	modulo, a % b |
-|  \+   | 	add, a + b |
-| \-   | 	subtract, a - b |
-| <<   | shift left,  left operand is shifted left by right operand bits (multiply by 2) |
-| \>>   |	shift right, left operand is shifted right by right operand bits (divide by 2) |
- | <    |	less than, result is true or false,  a %lt; b
-| <=   |	less than or equal, result is true or false,  a <= b
-| \>    |	greater than, result is true or false,  a > b
-| \>=   |	greater than or equal, result is true or false, a >= b
-|  ==   |	equal, result is true or false,  a == b
-| !=  | 	not equal, result is true or false,  a != b
-|  & | bitwise and,  a & b
-| ^ | bitwise exclusive or XOR,  a ^ b
-| \| | bitwise or,  a | b
-|  &&, and | relational and, result is true or false,  a < b && c >= d
-| \|\|, or | relational or, result is true or false,  a < b \|\| c >= d |
-| =  | store or assignment |
-|  += | add and store |
-|  -=  | subtract and store |
-|  *= | multiply and store |
-|  /= | divide and store|
-|  %= | modulo and store|
-| <<= | shift left and store|
-|  \>>= | shift right and store|
-|  &= | bitwise and and store|
-|  ^= | bitwise exclusive or and store|
-|  \|= | bitwise or and store|
-|  , | separator as in   ( y=x,z=++x )|
+## String Formatting (f-strings)
 
-### Basic Data Structures
+f-strings (formatted string literals) provide a concise and convenient way to embed expressions inside string literals for formatting. They were introduced in Python 3.6.
+
+```python
+name = "Alice"
+age = 30
+print(f"Hello, my name is {name} and I am {age} years old.")
+# Output: Hello, my name is Alice and I am 30 years old.
+
+pi = 3.14159
+print(f"Pi to two decimal places: {pi:.2f}")
+# Output: Pi to two decimal places: 3.14
+```
+
+<br>
+
+## Basic Data Structures
 
 ### List
 
-- List is a collection which is ordered and changeable. Allows duplicate members.
-
-
-- Lists are created using square brackets:
+-   Lists are ordered, mutable (changeable) collections that allow duplicate members.
+-   Created using square brackets `[]` or the `list()` constructor.
 
 ```python
-thislist = ["apple", "banana", "cherry"] 
+# Creating lists
+fruits = ["apple", "banana", "cherry"]
+numbers = [1, 2, 3, 4, 5]
+mixed_list = ["hello", 3.14, True, None]
+empty_list = []
+another_list = list(("apple", "banana")) # Using the constructor
+
+# Accessing elements (indexing starts at 0)
+print(fruits[0])  # Output: apple
+print(fruits[-1]) # Output: cherry (last item)
+
+# Slicing
+print(fruits[1:3]) # Output: ['banana', 'cherry'] (items from index 1 up to, but not including, index 3)
+print(fruits[:2])  # Output: ['apple', 'banana'] (from the beginning up to index 2)
+print(fruits[1:])  # Output: ['banana', 'cherry'] (from index 1 to the end)
+
+# Modifying lists
+fruits[1] = "blueberry"
+print(fruits) # Output: ['apple', 'blueberry', 'cherry']
+
+# Adding elements
+fruits.append("orange")   # Adds to the end
+print(fruits) # Output: ['apple', 'blueberry', 'cherry', 'orange']
+fruits.insert(1, "mango") # Inserts "mango" at index 1
+print(fruits) # Output: ['apple', 'mango', 'blueberry', 'cherry', 'orange']
+
+# Removing elements
+fruits.remove("cherry") # Removes the first occurrence of "cherry"
+print(fruits) # Output: ['apple', 'mango', 'blueberry', 'orange']
+popped_fruit = fruits.pop() # Removes and returns the last element
+print(popped_fruit) # Output: orange
+print(fruits)       # Output: ['apple', 'mango', 'blueberry']
+del fruits[0]       # Deletes the element at index 0
+print(fruits)       # Output: ['mango', 'blueberry']
+
+# Other common methods
+print(len(fruits)) # Output: 2
+if "mango" in fruits:
+    print("Mango is in the list")
+fruits.sort() # Sorts the list in place
+print(fruits) # Output: ['blueberry', 'mango'] (alphabetical)
+numbers.reverse() # Reverses the list in place
+print(numbers)    # Output: [5, 4, 3, 2, 1]
 ```
 
-- List items are ordered, changeable, and allow duplicate values.
+-   `pop()` function removes the last item by default, or an item at a specified index.
 
-- List items are indexed, the first item has index `[0]`, the second item has index `[1]` etc.
-
-- The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
-
-- To determine how many items a list has, use the `len()` function.
-
-- A list can contain different data types:
-```python
-list1 = ["abc", 34, True, 40, "male"]
-```
-- It is also possible to use the list() constructor when creating a new list
-```python
-thislist = list(("apple", "banana", "cherry"))  # note the double round-brackets
-```
-- pop() function removes the last value in the given list by default.
-
-  ```python
-  thislist = ["apple", "banana", "cherry"] 
-  
-  print(thislist.pop())  # cherry
-  print(thislist.pop(0))  #apple 
-  
-  ```
-
-  
+    ```python
+    thislist = ["apple", "banana", "cherry"]
+    last_item = thislist.pop()
+    print(last_item)         # Output: cherry
+    first_item = thislist.pop(0)
+    print(first_item)        # Output: apple
+    print(thislist)          # Output: ['banana']
+    ```
 
 ### Tuple
 
-- Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
-- A tuple is a collection which is ordered and unchangeable.
-- Tuples are written with round brackets.
-```python
-thistuple = ("apple", "banana", "cherry")
-```
-- Tuple items are ordered, unchangeable, and allow duplicate values.
-- Tuple items are indexed, the first item has index `[0]`, the second item has index `[1]` etc.
-- When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.
+-   Tuples are ordered, immutable (unchangeable) collections that allow duplicate members.
+-   Created using parentheses `()` or the `tuple()` constructor.
 
-- Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.
-- Since tuple are indexed, tuples can have items with the same value:
-- Tuples allow duplicate values:
 ```python
-thistuple = ("apple", "banana", "cherry", "apple", "cherry")
-```
-- To determine how many items a tuple has, use the  `len()`function:
-```python
-thistuple = ("apple", "banana", "cherry")
-print(len(thistuple))
-```
-- To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
-```python
-thistuple = ("apple",)
-print(type(thistuple))
+# Creating tuples
+point = (10, 20)
+colors = ("red", "green", "blue", "red")
+single_item_tuple = ("hello",) # Note the trailing comma
+empty_tuple = ()
+another_tuple = tuple(["a", "b", "c"]) # From a list
 
-# NOT a tuple
-thistuple = ("apple")
-print(type(thistuple))
-```
-- It is also possible to use the tuple() constructor to make a tuple.
-```python
+# Accessing elements (same as lists)
+print(point[0])   # Output: 10
+print(colors[1:3]) # Output: ('green', 'blue')
 
-thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
-print(thistuple)
+# Tuples are immutable - these operations will raise errors:
+# point[0] = 5
+# colors.append("yellow")
+
+# Common operations
+print(len(colors)) # Output: 4
+print(colors.count("red")) # Output: 2 (counts occurrences)
+print(colors.index("green")) # Output: 1 (returns index of first occurrence)
+
+# Unpacking tuples
+x, y = point
+print(f"x: {x}, y: {y}") # Output: x: 10, y: 20
 ```
+-   To create a tuple with only one item, you **must** add a comma after the item, otherwise Python will not recognize it as a tuple.
+    ```python
+    thistuple = ("apple",)
+    print(type(thistuple)) # Output: <class 'tuple'>
+
+    # NOT a tuple, this is just a string in parentheses
+    not_a_tuple = ("apple")
+    print(type(not_a_tuple)) # Output: <class 'str'>
+    ```
 
 ### Set
-- Set is a collection which is unordered and unindexed. No duplicate members.
-- A set is a collection which is both unordered and unindexed.
-```python
-thisset = {"apple", "banana", "cherry"}
-```
-- Set items are unordered, unchangeable, and do not allow duplicate values.
-- Unordered means that the items in a set do not have a defined order.
 
-- Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
-
-- Sets are unchangeable, meaning that we cannot change the items after the set has been created.
-- Duplicate values will be ignored.
-- To determine how many items a set has, use the `len()` method.
-```python
-thisset = {"apple", "banana", "cherry"}
-
-print(len(thisset))
-```
-- Set items can be of any data type:
-```python
-set1 = {"apple", "banana", "cherry"}
-set2 = {1, 5, 7, 9, 3}
-set3 = {True, False, False}
-set4 = {"abc", 34, True, 40, "male"}
-```
-- It is also possible to use the `set()` constructor to make a set.
-```python
-thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
-```
-- frozenset()  is just an immutable version of Set. While elements of a set can be modified at any time, elements of the frozen set remain the same after creation.
+-   Sets are unordered, mutable collections that do **not** allow duplicate members.
+-   Created using curly braces `{}` (but not for an empty set, use `set()`) or the `set()` constructor.
+-   Items are not indexed.
 
 ```python
-set1 = {"apple", "banana", "cherry"}
-frzset=frozenset(set1)
-print(frzset)
+# Creating sets
+fruits = {"apple", "banana", "cherry", "apple"} # "apple" will only appear once
+print(fruits) # Output might be {'cherry', 'banana', 'apple'} - order is not guaranteed
+
+numbers = {1, 2, 3, 4, 5}
+empty_set = set() # Important: {} creates an empty dictionary
+another_set = set(["a", "b", "c"]) # From a list
+
+# Adding elements
+fruits.add("orange")
+print(fruits)
+fruits.update(["mango", "grape"]) # Adds multiple elements
+print(fruits)
+
+# Removing elements
+fruits.remove("banana") # Raises KeyError if "banana" is not present
+print(fruits)
+fruits.discard("kiwi") # Does NOT raise an error if "kiwi" is not present
+print(fruits)
+popped_item = fruits.pop() # Removes and returns an arbitrary element
+print(popped_item)
+print(fruits)
+
+# Set operations
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+print(set1.union(set2))          # Output: {1, 2, 3, 4, 5}  (or set1 | set2)
+print(set1.intersection(set2))   # Output: {3}             (or set1 & set2)
+print(set1.difference(set2))     # Output: {1, 2}          (or set1 - set2)
+print(set1.symmetric_difference(set2)) # Output: {1, 2, 4, 5} (or set1 ^ set2)
+
+print(len(fruits))
 ```
 
-
+-   `frozenset()` is an immutable version of a set. Elements cannot be modified after creation.
+    ```python
+    set1 = {"apple", "banana", "cherry"}
+    frzset = frozenset(set1)
+    print(frzset)
+    # frzset.add("orange") # This would raise an AttributeError
+    ```
 
 ### Dictionary
 
-- Dictionary is a collection which is unordered and changeable. No duplicate members.
-- Dictionaries are used to store data values in key:value pairs.
-- Dictionaries are written with curly brackets, and have keys and values:
+-   Dictionaries are unordered (prior to Python 3.7, ordered since Python 3.7), mutable collections of key-value pairs.
+-   Keys must be unique and immutable (e.g., strings, numbers, tuples).
+-   Created using curly braces `{}` with `key: value` pairs or the `dict()` constructor.
+
 ```python
-thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+# Creating dictionaries
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
 }
+empty_dict = {}
+another_dict = dict(name="Bob", age=25) # Using the constructor
+
+# Accessing values
+print(person["name"]) # Output: Alice
+print(person.get("age")) # Output: 30
+print(person.get("country")) # Output: None (safer than [], doesn't raise KeyError)
+print(person.get("country", "USA")) # Output: USA (provides a default value)
+
+# Modifying dictionaries
+person["age"] = 31 # Update existing value
+person["occupation"] = "Engineer" # Add new key-value pair
+print(person)
+
+# Removing items
+popped_value = person.pop("city") # Removes "city" and returns its value
+print(popped_value) # Output: New York
+print(person)
+# del person["age"] # Deletes the key "age"
+# print(person)
+
+# Common methods
+print(len(person)) # Output: 3 (number of key-value pairs)
+print(list(person.keys()))   # Output: ['name', 'age', 'occupation'] (or similar, order depends on Python version)
+print(list(person.values())) # Output: ['Alice', 31, 'Engineer']
+print(list(person.items()))  # Output: [('name', 'Alice'), ('age', 31), ('occupation', 'Engineer')]
+
+# Iterating
+for key in person:
+    print(f"{key}: {person[key]}")
+
+for key, value in person.items():
+    print(f"{key} -> {value}")
 ```
-- Dictionary items are presented in key:value pairs, and can be referred to by using the key name.
+
+-   `pop()` function is used to remove an item with a specified key and return its value.
+    ```python
+    car = {
+      "brand": "Ford",
+      "model": "Mustang",
+      "year": 1964
+    }
+    model = car.pop("model")
+    print(model) # Output: Mustang
+    print(car)   # Output: {'brand': 'Ford', 'year': 1964}
+    ```
+
+<br>
+
+## Virtual Environments (`venv`)
+
+It's highly recommended to use virtual environments for Python projects to manage dependencies and isolate project-specific package versions. Python's built-in `venv` module can be used for this.
+
+1.  **Create a virtual environment:**
+    Navigate to your project directory in the terminal and run:
+    ```bash
+    python3 -m venv myenv  # Replace 'myenv' with your desired environment name (e.g., venv, .venv)
+    ```
+
+2.  **Activate the virtual environment:**
+    *   On macOS and Linux:
+        ```bash
+        source myenv/bin/activate
+        ```
+    *   On Windows (Command Prompt):
+        ```bash
+        myenv\Scripts\activate.bat
+        ```
+    *   On Windows (PowerShell):
+        ```bash
+        myenv\Scripts\Activate.ps1
+        ```
+    Your terminal prompt should change to indicate the active environment (e.g., `(myenv) $`).
+
+3.  **Install packages:**
+    With the environment active, use `pip` to install packages. They will be installed only in this environment.
+    ```bash
+    pip install requests
+    pip freeze > requirements.txt # Save installed packages to a file
+    ```
+
+4.  **Deactivate the virtual environment:**
+    When you're done working in the environment, you can deactivate it:
+    ```bash
+    deactivate
+    ```
+
+5.  **Recreating an environment from `requirements.txt`:**
+    If you have a `requirements.txt` file, you can install all listed packages into an active virtual environment:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+<br>
+
+## Conditional Branching (`if`, `elif`, `else`)
+
 ```python
-thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-print(thisdict["brand"])
+x = 10
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:
+    print("x is equal to 5")
+else:
+    print("x is less than 5")
+
+# Single line if (less common for complex logic)
+message = "Positive" if x > 0 else "Non-positive"
+print(message)
 ```
-- Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.
-- Dictionaries cannot have two items with the same key.
-- Duplicate values will overwrite existing values.
-- To determine how many items a dictionary has, use the `len()` function.
+
+<br>
+
+## Loops
+
+Python has two primary loop commands: `while` loops and `for` loops.
+
+### `while` loop
+-   Executes a set of statements as long as a condition is true.
 ```python
-print(len(thisdict))
+count = 0
+while count < 5:
+    print(f"Count is: {count}")
+    count += 1
+else: # Optional: executes when the loop condition becomes false
+    print("Loop finished")
 ```
-- The values in dictionary items can be of any data type
+-   `break`: Exits the loop immediately.
+-   `continue`: Skips the current iteration and proceeds to the next.
+
+### `for` loop
+-   Iterates over a sequence (list, tuple, dictionary, set, string) or other iterable objects.
 ```python
-thisdict = {
-  "brand": "Ford",
-  "electric": False,
-  "year": 1964,
-  "colors": ["red", "white", "blue"]
-}
-```
-
-- pop() Function is used to remove a specific value from a dictionary. You can only use key bot the value. Unlike Lists you have to give a value to this function
-
-  ```python
-   car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964
-  }
-  
-  x = car.pop("model")
-  
-  print(x)# Mustang
-  print(car)#{'brand': 'Ford', 'year': 1964}
-  ```
-
-  
-
-### Conditional branching
-
-```python
-    if condition:
-        pass
-    elif condition2:
-        pass
-    else:
-        pass
-```
-### Loops
-
- Python has two primitive loop commands:
-1. while loops
-2. for loops
-
-#### While loop
-- With the `while` loop we can execute a set of statements as long as a condition is true.
-- Example: Print i as long as i is less than 6
-```python
-i = 1
-while i < 6:
-  print(i)
-  i += 1
-```
-- The while loop requires relevant variables to be ready, in this example we need to define an indexing variable, i, which we set to 1.
-- With the `break` statement we can stop the loop even if the while condition is true
-- With the continue statement we can stop the current iteration, and continue with the next.
-
-- With the else statement we can run a block of code once when the condition no longer is true.
-
-#### For loop
-- A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
-
-- This is less like the for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
-
-- With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
-```python
+# Looping through a list
 fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  print(x)
-```
-- The for loop does not require an indexing variable to set beforehand.
-- To loop through a set of code a specified number of times, we can use the range() function.
-- The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
-- The range() function defaults to increment the sequence by 1, however it is possible to specify the increment value by adding a third parameter: range(2, 30, 3).
-- The else keyword in a for loop specifies a block of code to be executed when the loop is finished.
-A nested loop is a loop inside a loop.
+for fruit in fruits:
+    print(fruit)
 
-- The "inner loop" will be executed one time for each iteration of the "outer loop":
+# Looping through a string
+for char in "Python":
+    print(char)
+
+# Using range()
+for i in range(5): # 0, 1, 2, 3, 4
+    print(i)
+
+for i in range(2, 5): # 2, 3, 4 (start, stop)
+    print(i)
+
+for i in range(0, 10, 2): # 0, 2, 4, 6, 8 (start, stop, step)
+    print(i)
+else: # Optional: executes after the loop finishes normally (not by break)
+    print("For loop completed")
+
+# Looping through dictionary keys
+my_dict = {"a": 1, "b": 2}
+for key in my_dict:
+    print(f"Key: {key}, Value: {my_dict[key]}")
+
+# Looping through dictionary items (key-value pairs)
+for key, value in my_dict.items():
+    print(f"Key: {key}, Value: {value}")
+```
+-   `pass`: If you have a loop or conditional block with no content, use `pass` to avoid an error.
+    ```python
+    for x in [0, 1, 2]:
+        pass # Avoids an IndentationError
+    ```
+
+<br>
+
+## Function Definition and Call
 
 ```python
-adj = ["red", "big", "tasty"]
-fruits = ["apple", "banana", "cherry"]
+# Defining a function
+def greet(name):
+    """This function greets the person passed in as a parameter.""" # Docstring
+    message = f"Hello, {name}!"
+    return message
 
-for x in adj:
-  for y in fruits:
-    print(x, y)
-```
-- for loops cannot be empty, but if you for some reason have a for loop with no content, put in the pass statement to avoid getting an error.
+def add(a, b=0): # b has a default value
+    """This function adds two numbers."""
+    return a + b
 
-```python
-for x in [0, 1, 2]:
-  pass
-```
+# Calling functions
+greeting = greet("World")
+print(greeting) # Output: Hello, World!
 
-### Function definition
-```python
-def function_name():
-    return
-```
-### Function call
+sum1 = add(5, 3)
+print(sum1) # Output: 8
 
-```python
-function_name()
+sum2 = add(7) # Uses default value for b
+print(sum2) # Output: 7
 ```
 
-* We need not to specify the return type of the function.
-* Functions by default return `None` 
-* We can return any datatype.
+*   You don't need to specify the return type of a function.
+*   If a function doesn't have a `return` statement, or has a `return` statement without an expression, it implicitly returns `None`.
+*   Functions can return any data type.
